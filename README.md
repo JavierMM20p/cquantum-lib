@@ -104,3 +104,9 @@ Applies a Controlled Phase gate with phase angle phi. It applies a phase shift o
 int Z_measure(StateVector *state_vect, int qubit);
 ```
 Performs a projective measurement of the specified qubit in the computational (Z) basis. It collapses the qubit's state to |0⟩ or |1⟩ and returns the measured outcome. The state vector is updated to reflect this measurement collapse.
+
+## QFT
+```c
+void general_QFT(StateVector *state_vect);
+```
+Applies the Quantum Fourier Transform (QFT) to the entire quantum state vector. QFT transforms the basis states into a superposition weighted by complex exponential coefficients, effectively mapping a quantum state from the time domain to the frequency domain. This operation is fundamental in many quantum algorithms, such as Shor’s algorithm for factoring and quantum phase estimation. The general_QFT function applies the standard QFT circuit consisting of Hadamard and controlled phase shift gates across all qubits in the system.
